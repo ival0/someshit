@@ -29,7 +29,10 @@ open( my $fh, "$file_name" ) or die "Can't open '$file_name'!\n";
 $matrix_range=0;
 print "file opened\n";
 while (!eof){
-  @matrix[$matrix_range]=split( '\t', $fh);
+  my $line=$fh;
+  chomp($line);
+  print "$line\n";
+  @matrix[$matrix_range]=split( '\t', $line);
   $matrix_range++;
 }
 close $fh;

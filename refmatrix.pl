@@ -41,8 +41,6 @@ for $i (0..$matrix_range){
     print "$matrix[$i,$j]\n";
   }
 }
-
- 
    
 for $i(0..$matrix_range-1) {
   for $j($i+1..$matrix_range){

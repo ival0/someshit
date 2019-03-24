@@ -16,14 +16,14 @@ my @matrix=[
 my $ref_matrix=\@matrix;      
 for $i(0..3) {
   for $j($i+1..4){
-    $Bufer=${$ref_matrix}->[$i][$j];
-    ${$ref_matrix}->[$i][$j]=${$ref_matrix}->[$j][$i];
-    ${$ref_matrix}->[$j][$i]=$Bufer;
+    $Bufer=$ref_matrix->[$i][$j];
+    $ref_matrix->[$i][$j]=$ref_matrix->[$j][$i];
+    $ref_matrix->[$j][$i]=$Bufer;
   }
 }
 for $i(0..4) {
   for $j(0..4) {
-    print "${$ref_matrix}->[$i][$j]"." ";
+    print "$ref_matrix->[$i][$j]"." ";
   }
   print "\n";
 }

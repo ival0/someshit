@@ -49,9 +49,9 @@ for $i(0..$matrix_range-1) {
     $ref_matrix->[$j][$i]=$Bufer;
   }
 }
-#for $i(0..4) {
-#  for $j(0..4) {
-#    print "$ref_matrix->[$i][$j]"." ";
-#  }
-#  print "\n";
-#}
+for $i(0..$matrix_range) {
+  for $j(0..$matrix_range) {
+    print "$ref_matrix->[$i][$j]"." ";
+  }
+  print "\n";
+}

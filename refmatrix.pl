@@ -14,28 +14,7 @@ my $Bufer;
       [16, 17, 18, 19, 20],
       [21, 22, 23, 24, 25]
       );
-#
-#unless ( defined "matrix.dat" ) {
-#    die "No argument!";
-#}
-#
-#unless ( -e "matrix.dat" ) {
-#
-#  die "No such file: matrix.dat!";
-#}
-#
-#unless ( -r "matrix.dat" ) {
-#
-#  die "No read access to file: matrix.dat!";
-#}
-#
-#exit(0) if -z "matrix.dat";
-#
-#open( my $fh, "matrix.dat" ) or die "Can't open matrix.dat!\n";
-#while (!eof($fh)) {
-#  @{$matrix}=[$fh];
-# 
-# }
+
 for ($i=0; $i<=3; $i++) {
   for ($j=$i+1; $j<=4; $j++){
     $Bufer=${$rmatirx}[$i][$j];

@@ -25,13 +25,13 @@ unless ( -r $file_name ) {
 
 exit(0) if -z $file_name;
 
-open( my $fh, "<$file_name" ) or die "Can't open '$file_name'!\n";
+open( my $fh, "$file_name" ) or die "Can't open '$file_name'!\n";
 $matrix_range=0;
 print "file opened\n";
-
-  @matrix=$fh;
-    print "$matrix_range\n";
-
+while (!eof){
+  @matrix[$matrix_range]=$fh;
+  $matrix_range++;
+}
 close $fh;
 print "file closed";
 foreach $i (@matrix){

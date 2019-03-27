@@ -31,16 +31,18 @@ $matrix_range=0;
 while (!eof){
   my $line=readline($fh);
   chomp($line);
-  @matrix[$matrix_range]=split( /\t/, $line);
+  push @matrix, [split( /\t/, $line)];
   $matrix_range++;
 }
 $matrix_range--;
 close $fh;
 for $i (0..$matrix_range){
   for $j (0..$matrix_range){
-    print "$matrix[$i,$j]\n";
+    print "$ref_matrix->[$i][$j]"."|";
   }
+  print "\n";
 }
+print "was 2 for\n";
    
 for $i(0..$matrix_range-1) {
   for $j($i+1..$matrix_range){
@@ -51,7 +53,7 @@ for $i(0..$matrix_range-1) {
 }
 for $i(0..$matrix_range) {
   for $j(0..$matrix_range) {
-    print "$ref_matrix->[$i][$j]"." ";
+    print "$ref_matrix->[$i][$j]"."|";
   }
   print "\n";
 }

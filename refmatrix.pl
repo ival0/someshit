@@ -89,15 +89,14 @@ $columns=$Bufer;
 
 if ($rows>$columns){
   for $i (0..$rows){
-    $j=$columns;
-    while ($j++<$rows){
+    while ($#{$ref_matrix->[$i]}>$columns){
       pop @{$ref_matrix->[$i]};
     }
   }
 
 } elsif ($columns>$rows){
     $i=$rows;
-    while ($i++<$columns){
+    while ($#{$ref_matrix}>$rows){
       pop @{$ref_matrix};
     }
   }

@@ -47,7 +47,7 @@ if ($rows>$columns){
     }
   }
 } elsif ($columns>$rows){
-    ${ref_zero_row}=['0'];
+    ${ref_zero_row}=[];
     for $i (1..$columns){
       push(@{$ref_zero_row}, ['0']);  
     }
@@ -55,9 +55,6 @@ if ($rows>$columns){
       push @{$ref_matrix}, @{$ref_zero_row};
     }
   }
- foreach $i (@Zero_row){
- print "$i"."|";
- }
 for $i(0..$#{$ref_matrix}-1) {
   for $j($i+1..$#{$ref_matrix}){
     $Bufer=$ref_matrix->[$i][$j];
@@ -65,10 +62,27 @@ for $i(0..$#{$ref_matrix}-1) {
     $ref_matrix->[$j][$i]=$Bufer;
   }
 }
+$Bufer=$rows;
+$rows=$columns;
+$columns=$Bufer;
+
+if ($rows>$columns){
+  for $i (0..$rows){
+    for $j ($columns..$rows){
+    pop @{$ref_matrix->[$i]};
+    }
+  }
+
+} elsif ($columns>$rows){
+    for $i ($rows..$columns){
+      pop @{$ref_matrix};
+    }
+  }
+
 for $i(0..$rows) {
   for $j(0..$columns) {
     print "$ref_matrix->[$i][$j]"." ";
   }
   print "\n";
-  }
+}
 

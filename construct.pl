@@ -30,11 +30,11 @@ while (!eof){
 close $fh;
 for $i(@words){
     my $tmp_set = $set_symbols;
-    my $tmp_word=lc($i);
-    my $ok=1;
+    my $tmp_word = lc($i);
+    my $ok = 1;
         until (($tmp_word eq '') or (not $ok)){
             my $tmp_symbol = chop($tmp_word);
-            if (not($tmp_set =~ s/$tmp_symbol//)){$ok=0}
+            if (not($tmp_set =~ s/$tmp_symbol//)){$ok = 0}
         }
     if ($ok) {print "$i\n"}
 }
